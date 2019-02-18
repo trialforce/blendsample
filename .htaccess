@@ -1,0 +1,73 @@
+php_flag display_errors 1
+AddDefaultCharset UTF-8
+DefaultLanguage pt-BR
+Options -Indexes
+IndexIgnore *
+AddType text/css .css
+AddType text/cache-manifest .manifest
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^([^.]+)\.png$ marcaemailido.php?file=$1 [QSA,L]
+RewriteRule ^([^\.]+)\.png$   marcaemailido.php?file=$1.png [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/(.+)?    index.php?p=$1&e=$2&v=$3 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)    index.php?p=$1&e=$2 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)    index.php?p=$1 [QSA,L]
+#RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?(192.168.0.7:8080/site/puragraca/) [NC]
+#RewriteRule \.(mp4)$ - [NC,F,L]
+
+<FilesMatch "\.reg$">
+   ForceType application/octet-stream
+   Header set Content-Disposition attachment
+</FilesMatch>
+
+#keep alive
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+    Header append Cache-Control "public"
+
+    #cache
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+        Header set Expires "Thu, 15 Apr 2020 20:00:00 GMT"
+    </filesMatch>
+
+    <FilesMatch "\.(js|css|xml|gz)$">
+        Header append Vary: Accept-Encoding
+    </FilesMatch>
+
+    <IfModule mod_expires.c>
+        # Webfonts
+        ExpiresActive on
+        ExpiresByType font/truetype "access plus 1 year"
+        ExpiresByType application/x-font-ttf "access plus 1 month"
+        ExpiresByType font/opentype "access plus 1 month"
+        ExpiresByType application/x-font-woff "access plus 1 month"
+        ExpiresByType image/svg+xml "access plus 1 month"
+        ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+    </IfModule>
+
+</ifModule>
+
+#gzip
+<ifModule mod_deflate.c>
+    <filesMatch "\.(js|css|html|php)$">
+        SetOutputFilter DEFLATE
+    </filesMatch>
+</ifModule>
+
+<IfModule mod_deflate.c>
+    #AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+</IfModule>
+
+#força arquivos remessa serem baixados
+<FilesMatch "((^$)|(^.+\.(REM|CRM|RM2|RM3|RM4|240)$))">
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
+</FilesMatch>

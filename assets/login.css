@@ -1,0 +1,39 @@
+body{
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    background-size: cover;
+}
+
+h1 { 
+    margin: 5%;
+}
+
+label {
+    padding: 14px 0;
+    display: block;
+}
+
+#box {
+    background-color: RGBA(255,255,255,0.8);
+    border: solid 1px #ddd;
+    width: 280px;
+    min-height: 200px;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0 0 3px RGBA(0,0,0,0.2);
+    padding-bottom: 4px;
+}
+
+input {
+    width: 84%;
+    margin: 8px 0;
+}
+
+.error {
+    color: #f00;
+    display: block;
+    font-size: 12px;
+    display: none;
+    margin-top: 20px;
+}

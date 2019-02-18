@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="full-height">
+    <head>
+        <base href="">
+        <title id="title">Clean project</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link id="favicon" rel="shortcut icon" href="favicon.ico" />
+    </head>
+    <body id="body" class="full-height ">
+        <div class="main full-height">
+            <div class="loading hide">
+                <p><i class="fa fa-cog fa-spin"></i>Carregando...</p>
+            </div>
+            <header id="header">
+                <i id="menu-click" class="fa fa-bars" onclick="$('body').toggleClass('menu-open');"></i>
+                <a id="logo-link" data-ajax="true" href="main">
+                    <i class="fa fa-user" alt="Logo"/>
+                </a>
+                <div id="usuario-perfil" class="usuario-perfil">
+                    <a href="#">User name</a>
+                </div>
+            </header>
+            <nav class="full-height">
+            </nav>
+            <form autocomplete="off" >
+                <input type="hidden" id="formChanged" name="formChanged">
+            </form>
+            <form id="content" class="content clearfix" onsubmit="return false;" autocomplete="off"></form>
+        </div>
+    </body>
+</html>
