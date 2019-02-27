@@ -1,15 +1,21 @@
 <?php
 
-namespace Page;
+namespace Page\Home;
 
 class Main extends \Page\Page
 {
 
     public function onCreate()
     {
-        $this->setLayoutFile('page/main');
+        $this->setLayoutFile('page/home/main');
 
         $this->getMainDiv()->html('Dinamic content');
+
+        $migration = new \Migration\Manager('default', 'versoes');
+        $migration->execute();
+
+        $migration = new \Migration\Manager('default', 'migration');
+        $migration->execute();
     }
 
     public function verifyPermission($event = NULL)

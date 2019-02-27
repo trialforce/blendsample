@@ -4307,7 +4307,7 @@ button::-moz-focus-inner{
 }
 
 /*celular*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .field-label, .button-label {
         text-align: left;
         width: 35%;

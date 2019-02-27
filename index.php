@@ -14,12 +14,13 @@ try
 {
     require 'config.php';
     \DataHandle\Config::set('theme', 'Sample');
+    \DataHandle\Config::set('defaultPage', \DataHandle\Session::get('user') ? 'page\home\main' : '');
     require 'sample.php';
 
-    $app = new App( );
+    //var_dump($_REQUEST);
+    $app = new App();
     $app->handle();
 }
-//suporte php 5.x
 catch (\Exception $e)
 {
     \Log::exception($e);
