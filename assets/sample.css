@@ -23,21 +23,6 @@ body {
     width: 110px;
 }
 
-body.login, body.open {
-    text-align: center;
-    color: #666;
-    box-shadow: inset 0 5px 10px 0 RGBA(0,0,0,0.1), 0 0px 12px RGBA(0,0,0,0.2);
-    -webkit-box-shadow: inset 0 5px 10px 0 RGBA(0,0,0,0.1), 0 0px 12px RGBA(0,0,0,0.2);
-    height: 100%;
-    margin: 0;
-}
-
-.login label {
-    padding: 14px 0;
-    display: block;
-    font-size: 12px;
-}
-
 #logoLogin {
     margin-top: 8px;
 }
@@ -74,59 +59,6 @@ select[data-multiple="multiple"] option.selected:after {
     background-color: #3581FB;
 }
 
-.login #box {
-    display: block;
-    border: solid 1px #ddd;
-    width: 280px;
-    margin: 0 auto;
-    border-radius: 3px;
-    padding-bottom: 4px;
-    background-color: #fff;
-}
-
-.login input {
-    border: solid 1px #bbb;
-    border-radius: 3px;
-    width: 190px;
-    padding: 6px;
-    font-size: 16px;
-    margin: 10px;
-    line-height: 24px;
-    display: inline-block;
-    float:left;
-}
-
-.login .appendBox {
-    display: inline-block;
-    background-color: #e6ebf1;
-    border: solid 1px #ccc;
-    height: 40px;
-    width: 36px;
-    margin: 10px;
-    float: left;
-    border-radius: 3px;
-    text-align: center;
-    font-size: 18px;
-    padding: 0;
-    line-height: 40px;
-}
-
-.login .appendRight {
-    margin-left: 0;
-    border-radius: 0 3px 3px 0;
-    border-left: none;
-}
-
-.login .appendLeft {
-    margin-right: 0;
-    border-radius: 3px 0 0 3px;
-    margin-left: 18px
-}
-
-.login #version {
-    margin-top: 2%;
-}
-
 footer.open{
     font-size: 10px;
     position: absolute;
@@ -141,68 +73,6 @@ footer.open{
     color: orange;
     font-weight: bold;
     font-size: 20px;
-}
-
-.login input[type="submit"] {
-    -webkit-appearance: none;
-    background-color: #f5f5f5;
-    border: solid 1px #ddd;
-    color: #555;
-    border-radius: 3px;
-    text-decoration: none;
-    cursor: pointer;
-    *overflow: visible;
-    display:inline-block;
-    transition-duration: 1s;
-    -webkit-transition-duration: 1s;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0px 0px 1px rgba(0,0,0,0.1);
-    float:left;
-    width: 202px;
-    margin-left: 18px;
-    margin-bottom: 15px;
-    background-image: linear-gradient(to bottom,#fefefe,#f5f5f5);
-}
-
-.login input[type="submit"]:hover {
-    background-image: linear-gradient(to bottom,#fff,#f5f5f5);
-    opacity: 0.8;
-    color: #999;
-}
-
-.login input[disabled] {
-    opacity: 0.2;
-}
-
-.login input[type="submit"]:active {
-    border: solid 1px #999;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.login a {
-    font-size: 11px;
-    line-height: 20px;
-    padding-bottom: 10px;
-    color: #3581FB;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.login a:hover, .login a:active {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-
-.login .error {
-    color: #f00;
-    display: block;
-    font-size: 12px;
-    padding-bottom: 12px;
-    display: none;
-}
-
-.login i.fa {
-    margin-right: 0 !important;
 }
 
 .formEsqueciSenha {
@@ -721,20 +591,20 @@ input[type=search] {
     -webkit-appearance: none;
 }
 
-input:not([disabled]):hover, textarea:not([disabled]):hover , select:not([disabled]):hover { 
+input:not([disabled]):hover, textarea:not([disabled]):hover , select:not([disabled]):hover {
 }
 
-input[readonly],select[readonly],textarea[readonly] { 
+input[readonly],select[readonly],textarea[readonly] {
     background-color: #eee;
 }
 
 input[disabled], select[disabled], textarea[disabled]{
-    background-color: transparent; 
+    background-color: transparent;
     border: solid 1px transparent;
     box-shadow:none;
 }
 
-button[disabled], input[disabled] { 
+button[disabled], input[disabled] {
     opacity: 0.6;
     cursor: default;
 }
@@ -745,9 +615,9 @@ select:not([readonly]):not([disabled]):focus,
 textarea:not([readonly]):not([disabled]):focus ,
 button:not([readonly]):not([disabled]):focus,
 .btn:not([readonly]):not([disabled]):focus,
-input[type="submit"]:not([readonly]):not([disabled]):focus { 
-    outline: #3581FB solid 2px; 
-    text-decoration: none; 
+input[type="submit"]:not([readonly]):not([disabled]):focus {
+    outline: #3581FB solid 2px;
+    text-decoration: none;
     box-shadow: none;
 }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; height: 13px; width: 13px;}
@@ -794,14 +664,14 @@ input[type=checkbox] {
 }
 
 .btn:hover, button:hover, input[type="submit"]:hover {
-    box-shadow: 0 0 2px #ccc; 
-    transition-duration: 0.5s; 
-    -webkit-transition-duration: 0.5s; 
+    box-shadow: 0 0 2px #ccc;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
     opacity: 0.8;
 }
 
-.btn:active, button:active, input[type="submit"]:active { 
-    background-color: #DDD; 
+.btn:active, button:active, input[type="submit"]:active {
+    background-color: #DDD;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -858,17 +728,17 @@ input[type=checkbox] {
 .field-contain, .image-contain {
     display: inline-block;
     margin: 0;
-    width: 100%;
+    /* width: 100%; */
     max-width: 100%;
     font-size: 0;
 }
 
 .field-contain {
-    position: relative;   
+    position: relative;
 }
 
-.field-contain .field-contain { 
-    display: inline-block; 
+.field-contain .field-contain {
+    display: inline-block;
     margin:0;
     width: auto;
 }
@@ -932,11 +802,11 @@ input[type=checkbox] {
 
 label[data-required="1"]:after { content: '*'; position: absolute; right: 4px; top: 0; margin: 0; color: red;}
 .label-top .field-label:after , .label-top [data-required="1"]:after { right: auto !important;}
-[data-invalid="1"] { 
+[data-invalid="1"] {
     color: #fff;
     background-color: red;
     border-color: red;
-    box-shadow: none; 
+    box-shadow: none;
     transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
 }
@@ -957,10 +827,6 @@ label[data-required="1"]:after { content: '*'; position: absolute; right: 4px; t
 
 .htmlEditor ol, .htmlEditor ul {
     margin-left: 20px;
-}
-
-.nicEdit-main {
-    min-height: 60px !important;
 }
 
 .nicEdit-panelContain {
@@ -998,7 +864,7 @@ label[data-required="1"]:after { content: '*'; position: absolute; right: 4px; t
 
 .hint.danger {
     font-size: 11px;
-    padding: 3px;    
+    padding: 3px;
     display: inline-block;
     margin-left: 9px;
     position: absolute;
@@ -1061,30 +927,30 @@ i.icon-search { margin-right: 0; }
     margin-left: 16px;
 }
 
-.alignLeft { 
-    text-align: left; 
+.alignLeft {
+    text-align: left;
     vertical-align: middle;
 }
 
-.alignRight { 
-    text-align: right; 
+.alignRight {
+    text-align: right;
     vertical-align: middle;
 }
 
-.alignCenter { 
-    text-align: center; 
+.alignCenter {
+    text-align: center;
     vertical-align: middle;
 }
 
-.alignJustify { 
-    text-align: justify; 
+.alignJustify {
+    text-align: justify;
     vertical-align: middle;
 }
 
 .alignColapse {
-    text-align: left; 
-    padding: 0; 
-    margin:0; 
+    text-align: left;
+    padding: 0;
+    margin:0;
     vertical-align: middle;
 }
 
@@ -1695,7 +1561,7 @@ i.icon-search { margin-right: 0; }
     width: 100% !important;
     height: 28px !important;
     max-width: 100%;
-    margin: 0;    
+    margin: 0;
     border: none;
     border-radius: 0;
 }
@@ -3377,7 +3243,7 @@ html.swipebox-html.swipebox-touch{overflow:hidden!important}#swipebox-overlay im
 
 ul.changelog {
     margin-left: 20px;
-    line-height: 20px;  
+    line-height: 20px;
 }
 
 #divLegal h2 {
@@ -3463,7 +3329,7 @@ ul.changelog {
     color: #fff;
 }
 
-.table tr.ofx-erro:hover,.table tr.alt.ofx-erro:hover 
+.table tr.ofx-erro:hover,.table tr.alt.ofx-erro:hover
 {
     background-color: #f55;
     color: #fff;
@@ -3774,7 +3640,7 @@ button::-moz-focus-inner{
 .alerta-notificacoes {
     border-radius: 3px;
     padding: 2px;
-    margin-left: -25px;   
+    margin-left: -25px;
 }
 
 .field-contain .tooltip .tooltiptext {
@@ -3784,7 +3650,7 @@ button::-moz-focus-inner{
 .tooltip {
     position: relative;
     display: inline-block;
-    margin: 0 !important; 
+    margin: 0 !important;
 }
 
 .tooltip .tooltiptext {
@@ -4064,7 +3930,7 @@ button::-moz-focus-inner{
 
 .chat-message span {
     display: inline-block;
-    background: #eee;    
+    background: #eee;
     padding: 2px 6px;
     border-radius: 6px;
     box-shadow: 0px 1px 2px 0px RGBA(0,0,0,0.5);
@@ -4113,7 +3979,7 @@ button::-moz-focus-inner{
 .chat-icon {
     position: absolute;
     top: 6px;
-    right: 5px;    
+    right: 5px;
 }
 
 #widget-admin-noticia {
@@ -4326,7 +4192,7 @@ button::-moz-focus-inner{
         box-sizing: border-box;
         left: 1%;
         margin-left: 0;
-    }    
+    }
 
     #divLegal.listar {
         padding: 0;
@@ -4469,7 +4335,7 @@ button::-moz-focus-inner{
         box-sizing: border-box !important;
         margin: 1% !important;
     }
-    
+
     #buscar.btn {
         height: 40px;
         margin-top: 16px !important;
@@ -4493,7 +4359,7 @@ button::-moz-focus-inner{
     #btnGroup .btn .fa {
         margin-right: 0;
     }
-    
+
     #containerFiltros {
         display: block;
     }
@@ -4690,7 +4556,7 @@ button::-moz-focus-inner{
         width: 100%;
     }
 
-    .popup .footer .btn { 
+    .popup .footer .btn {
         padding: 0 8px;
     }
 
