@@ -1492,6 +1492,10 @@ i.icon-search { margin-right: 0; }
     box-sizing: border-box;
 }
 
+.filterInterval {
+    width: 31%;
+}
+
 .fa.trashFilter {
     cursor: pointer;
     margin-right: 0;
@@ -1923,7 +1927,7 @@ i.fa-thumb-tack.filter-menu {
 }
 
 #q.search {
-    width: calc(100% - 10px);
+    width: calc(100% - 15px);
 }
 
 i.fa-thumb-tack.filter-menu {
