@@ -11,10 +11,10 @@ class Main extends \Page\Page
 
         $this->getMainDiv()->html('Dinamic content');
 
-        $migration = new \Migration\Manager('default', 'versoes');
+        $migration = new \Db\Migration\Manager('default', 'versoes');
         $migration->execute();
 
-        $migration = new \Migration\Manager('default', 'migration');
+        $migration = new \Db\Migration\Manager('default', 'migration');
         $migration->execute();
     }
 
