@@ -62,16 +62,27 @@ class Sample extends \View\Layout
 
     public function addCssJs()
     {
-        $this->addScript(BLEND_PATH . '/js/jquery.min.js');
-        $this->addScript(BLEND_PATH . '/js/jquery.autonumeric.js');
-        $this->addScript(BLEND_PATH . '/js/jquery.mask.js');
-        $this->addScript(BLEND_PATH . '/js/jquery.datetimepicker.js');
-        $this->addScript(BLEND_PATH . '/js/blend.js');
-        $this->addScript(BLEND_PATH . '/js/nicedit.js');
-        $this->addScript(BLEND_PATH . '/js/shortcut.js');
-        $this->addScript(BLEND_PATH . '/js/highcharts.js');
-        $this->addScript(BLEND_PATH . '/js/jquery.swipebox.js');
-        $this->addScript(BLEND_PATH . '/js/dropzone.js');
+        $optimizer = new \Misc\Optimizer(\Disk\File::getFromStorage('azata.js')); //, '\Misc\JsMin');
+        $optimizer->addFile(BLEND_PATH . '/js/jquery.min.js');
+        $optimizer->addFile(BLEND_PATH . '/js/jquery.autonumeric.js');
+        $optimizer->addFile(BLEND_PATH . '/js/jquery.mask.js');
+        $optimizer->addFile(BLEND_PATH . '/js/jquery.datetimepicker.js');
+        $optimizer->addFile(BLEND_PATH . '/js/nicedit.js');
+        $optimizer->addFile(BLEND_PATH . '/js/shortcut.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend.js');
+
+        foreach (\Disk\File::find(BLEND_PATH . '/js/blend/*.js') as $fileJs)
+        {
+            $optimizer->addFile($fileJs);
+        }
+
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.grownumber.js');
+        $optimizer->addFile(BLEND_PATH . '/js/dropzone.js');
+
+        $output = $optimizer->execute();
+
+        $script = new \View\Script($output->getUrl(), null, \View\Script::TYPE_JAVASCRIPT, false);
+        $this->getHtml()->appendChild($script);
 
         $this->addStyleShet('base', BLEND_PATH . '/base.css', NULL, FALSE);
         $this->addStyleShet('main', 'assets/sample.css');

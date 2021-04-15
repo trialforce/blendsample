@@ -11,11 +11,9 @@ class Main extends \Page\Page
 
         $this->getMainDiv()->html('Dinamic content');
 
-        $migration = new \Migration\Manager('default', 'versoes');
-        $migration->execute();
+        $input = new \View\Input('id', \View\InputText::TYPE_TEXT, 'valor', 'span3');
 
-        $migration = new \Migration\Manager('default', 'migration');
-        $migration->execute();
+        $this->getMainDiv()->append($input);
     }
 
     public function verifyPermission($event = NULL)
