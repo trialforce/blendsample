@@ -10,12 +10,6 @@ class Main extends \Page\Page
         $this->setLayoutFile('page/home/main');
 
         $this->getMainDiv()->html('Dinamic content');
-
-        $migration = new \Db\Migration\Manager('default', 'versoes');
-        $migration->execute();
-
-        $migration = new \Db\Migration\Manager('default', 'migration');
-        $migration->execute();
     }
 
     public function verifyPermission($event = NULL)
