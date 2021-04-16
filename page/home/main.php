@@ -10,6 +10,10 @@ class Main extends \Page\Page
         $this->setLayoutFile('page/home/main');
 
         $this->getMainDiv()->html('Dinamic content');
+
+        $input = new \View\Input('id', \View\InputText::TYPE_TEXT, 'valor', 'span3');
+
+        $this->getMainDiv()->append($input);
     }
 
     public function verifyPermission($event = NULL)

@@ -1,4 +1,9 @@
 /nbproject/private/
-/storage/
-/nbproject/
+nbproject/
+storage/
 error.log
+config.php
+media/
+small/*
+thumb/*
+vendor/*
