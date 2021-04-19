@@ -37,6 +37,7 @@ class Sample extends \View\Layout
         $nav = new View\DomContainer($nav);
 
         $modules['home/main'] = '<i class="fa fa-user">&nbsp;</i>Main';
+        $modules['home/cliente'] = '<i class="fa fa-user">&nbsp;</i>Cliente';
         $submenu['example/example/event/pk'] = '<i class="fa fa-user">&nbsp;</i>Example';
         $modules['submenu'] = array('<i class="fa fa-user">&nbsp;</i>Sub-menu', $submenu);
         $modules['example/example/event/otherpk'] = '<i class="fa fa-user">&nbsp;</i>Example';

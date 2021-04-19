@@ -4248,6 +4248,80 @@ button::-moz-focus-inner{
     overflow-y: scroll;
 }
 
+.advanced-filter-span {
+    display: none;
+}
+
+.toast {
+    position: fixed;
+    left: 50%;
+    top: -100px;
+    opacity:0; 
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 14px 20px;
+    min-width: 500px;
+    text-align: center;
+    z-index:150;
+    transition: 0.3s ease-in-out;
+    box-shadow: 1px 1px 5px 0px RGBA(0,0,0,0.3);
+}
+
+.toast.show {
+    top:55px;
+    opacity: 1;
+    transition: 0.3s ease-in-out
+}
+
+@media screen and (max-width: 800px) {
+
+    .toast {
+        min-width: 98%;
+        box-sizing: border-box;
+        margin-left: 0;
+    }  
+}
+
+
+.primary {
+    background: #009bdb;
+    border: solid 1px #009bdb;
+    color: #fff;
+}
+
+.alert {
+    background: rgb(255,130,0);
+    color: #fff;
+}
+
+.danger, .table tr.danger {
+    background-color: #f00;
+    color: #fff;
+}
+
+.info {
+    background-color: #3581FB;
+    /*border: solid 1px #3581FB;*/
+    color: white;
+    background-image: none;
+}
+
+.clean {
+    border: solid 1px #ddd;
+    background-color: #fff;
+    background-image: none;
+    box-shadow: none;
+}
+
+.success, .table tr.success {
+    background: rgb(111,191,0);
+    color: #fff;
+}
+
+.clean:hover {
+    box-shadow: 2px 2px 3px RGBA(0,0,0,0.1);
+}
+
 /*celular*/
 @media screen and (max-width: 1000px) {
     .field-label, .button-label {
