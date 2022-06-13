@@ -63,14 +63,20 @@ class Sample extends \View\Layout
 
     public function addCssJs()
     {
-        $optimizer = new \Misc\Optimizer(\Disk\File::getFromStorage('azata.js')); //, '\Misc\JsMin');
+        $optimizer = new \Misc\Optimizer(\Disk\File::getFromStorage('azata.js'));
         $optimizer->addFile(BLEND_PATH . '/js/jquery.min.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.autonumeric.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.mask.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.datetimepicker.js');
-        $optimizer->addFile(BLEND_PATH . '/js/nicedit.js');
-        $optimizer->addFile(BLEND_PATH . '/js/shortcut.js');
         $optimizer->addFile(BLEND_PATH . '/js/blend.js');
+        $optimizer->addFile(BLEND_PATH . '/js/shortcut.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend/popup.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend/menu.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend/cookie.js');
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.lazyloading.js');
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.convertajaxlinks.js');
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.onpressenter.js');
+        $optimizer->addFile(BLEND_PATH . '/js/slide.js');
 
         foreach (\Disk\File::find(BLEND_PATH . '/js/blend/*.js') as $fileJs)
         {
