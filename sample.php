@@ -71,6 +71,15 @@ class Sample extends \View\Layout
         $optimizer->addFile(BLEND_PATH . '/js/jquery.mask.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.datetimepicker.js');
         $optimizer->addFile(BLEND_PATH . '/js/shortcut.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend.js');
+        $optimizer->addFile(BLEND_PATH . '/js/shortcut.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend/popup.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend/menu.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend/cookie.js');
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.lazyloading.js');
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.convertajaxlinks.js');
+        $optimizer->addFile(BLEND_PATH . '/js/plugin/blend.onpressenter.js');
+        $optimizer->addFile(BLEND_PATH . '/js/slide.js');
 
         foreach (\Disk\File::find(BLEND_PATH . '/js/blend/*.js') as $fileJs)
         {

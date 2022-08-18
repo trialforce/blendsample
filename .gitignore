@@ -1,9 +1,9 @@
 /nbproject/private/
+nbproject/
+storage/
 error.log
 config.php
 media/
-nbproject/
 small/*
 thumb/*
-storage/
 vendor/*
