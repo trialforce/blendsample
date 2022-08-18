@@ -36,12 +36,13 @@ class Sample extends \View\Layout
         $nav = $this->getElementsByTagName('nav')->item(0);
         $nav = new View\DomContainer($nav);
 
-        $modules['home/main'] = '<i class="fa fa-user">&nbsp;</i>Main';
-        $modules['home/cliente'] = '<i class="fa fa-user">&nbsp;</i>Cliente';
-        $submenu['example/example/event/pk'] = '<i class="fa fa-user">&nbsp;</i>Example';
+        $submenu['home-main'] = '<i class="fa fa-user">&nbsp;</i>Main';
+        $submenu['home-cliente'] = '<i class="fa fa-user">&nbsp;</i>Cliente';
+        $submenu['example-example'] = '<i class="fa fa-user">&nbsp;</i>Example';
+        $submenu['example-example/event/pk'] = '<i class="fa fa-user">&nbsp;</i>Example 2';
+        $submenu['home-main/sair'] = '<i class="fa fa-sign-out">&nbsp;</i>Sair';
+
         $modules['submenu'] = array('<i class="fa fa-user">&nbsp;</i>Sub-menu', $submenu);
-        $modules['example/example/event/otherpk'] = '<i class="fa fa-user">&nbsp;</i>Example';
-        $modules['home/main/sair'] = '<i class="fa fa-sign-out">&nbsp;</i>Sair';
 
         $nav->append(new \View\Ext\Menu('menuzao', $modules));
     }
@@ -63,14 +64,13 @@ class Sample extends \View\Layout
 
     public function addCssJs()
     {
-        $optimizer = new \Misc\Optimizer(\Disk\File::getFromStorage('azata.js')); //, '\Misc\JsMin');
+        $optimizer = new \Misc\Optimizer(\Disk\File::getFromStorage('sample.js')); //, '\Misc\JsMin');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.min.js');
+        $optimizer->addFile(BLEND_PATH . '/js/blend.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.autonumeric.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.mask.js');
         $optimizer->addFile(BLEND_PATH . '/js/jquery.datetimepicker.js');
-        $optimizer->addFile(BLEND_PATH . '/js/nicedit.js');
         $optimizer->addFile(BLEND_PATH . '/js/shortcut.js');
-        $optimizer->addFile(BLEND_PATH . '/js/blend.js');
 
         foreach (\Disk\File::find(BLEND_PATH . '/js/blend/*.js') as $fileJs)
         {

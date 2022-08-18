@@ -17,8 +17,7 @@ try
     \DataHandle\Config::set('defaultPage', \DataHandle\Session::get('user') ? 'page\home\main' : '');
     require 'sample.php';
 
-    $app = new App();
-    $app->handle();
+    App::getInstance()->handle();
 }
 catch (\Exception $e)
 {
